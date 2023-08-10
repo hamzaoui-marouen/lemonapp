@@ -3,6 +3,7 @@ import { ScrollView, Text, StyleSheet, TextInput } from 'react-native';
 
 export default function WelcomeScreen() {
   const [firstName, onChangeFirstName] = useState('');
+  const [password, onChangePassword] = useState('');
   return (
     <ScrollView style={styles.container}>
       <Text style={styles.headerText}>Welcome to Little Lemon</Text>
@@ -14,9 +15,18 @@ export default function WelcomeScreen() {
       <TextInput
         style={styles.inputBox}
         value={firstName}
+        keyboardType={"email-address"}
         onChangeText={onChangeFirstName}
         placeholder={'First Name'}
       />
+      <TextInput
+              style={styles.inputBox}
+              value={password}
+              keyboardType={""}
+              onChangeText={onChangePassword}
+              placeholder={'Password'}
+              secureTextEntry={true}
+            />
     </ScrollView>
   );
 }
